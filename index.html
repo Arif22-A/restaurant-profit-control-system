@@ -57,16 +57,27 @@ pointer-events:none;
 
 }
 
-        .glass{
+       .glass{
 
-            backdrop-filter:blur(20px);
-            background:rgba(255,255,255,.05);
-            border:1px solid rgba(255,255,255,.08);
-    
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
 
-        }
+transition:all .35s ease;
 
-        .dashboard-window{
+}
+
+.glass:hover{
+
+border-color:rgba(16,185,129,.35);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.35),
+0 0 30px rgba(16,185,129,.08);
+
+}
+
+.dashboard-window{
 
 transform:rotate(-3deg);
 
@@ -95,6 +106,12 @@ transform:rotate(0deg) scale(1.02);
 
         }
 
+        html{
+
+    scroll-behavior:smooth;
+
+}
+
     </style>
 
 </head>
@@ -111,62 +128,40 @@ transform:rotate(0deg) scale(1.02);
 
 </div>
 
-<!-- NAVBAR -->
-<nav class="fixed w-full z-50 glass">
+<!-- Navigation -->
 
-<div class="max-w-7xl mx-auto px-8">
+<div class="hidden md:flex items-center gap-10 text-gray-300">
 
-<div class="flex justify-between items-center h-20">
+    <a href="#overview" class="hover:text-white transition">
+        Overview
+    </a>
 
+    <a href="#features" class="hover:text-white transition">
+        What's Included
+    </a>
 
-<div class="flex items-center gap-3">
+    <a href="#toolkit" class="hover:text-white transition">
+        Get the Toolkit
+    </a>
 
-    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center font-bold text-black">
-        K
-    </div>
-
-   <div>
-
-    <h1 class="font-bold text-xl tracking-wide">
-        Kitchen Mates™
-    </h1>
-
-    <p class="text-xs text-gray-400">
-        Restaurant Profit Control System
-    </p>
+    <a href="#faq" class="hover:text-white transition">
+        FAQ
+    </a>
 
 </div>
 
-</div>
-    
-<div class="hidden md:flex gap-10 text-gray-300">
+<!-- CTA -->
 
-<a href="#">Features</a>
+<a href="#toolkit"
+class="bg-emerald-500 hover:bg-emerald-400 transition px-6 py-3 rounded-full font-semibold shadow-lg shadow-emerald-500/20">
 
-<a href="#">Modules</a>
-
-<a href="#">Pricing</a>
-
-<a href="#">FAQ</a>
-
-</div>
-
-<a href="#pricing"
-class="bg-green-500 hover:bg-green-600 transition px-6 py-3 rounded-full font-semibold">
-
-Get Access →
+Get the Toolkit →
 
 </a>
 
-</div>
-
-</div>
-
-</nav>
-
 <!-- HERO -->
 
-<section class="hero-bg min-h-screen flex items-center py-32">
+<section id="overview" class="hero-bg min-h-screen flex items-center py-32">
 
 <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
 
@@ -208,17 +203,17 @@ through one integrated management system.
 
 <div class="flex gap-4 mt-10">
 
-<a href="#pricing"
-class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 font-semibold transition">
+<a href="#features"
+class="px-8 py-4 rounded-xl border border-white/20 hover:border-white transition">
 
-Start Controlling Profit →
+Explore the Toolkit
 
 </a>
 
 <a href="#demo"
 class="px-8 py-4 rounded-xl border border-white/20 hover:border-white">
 
-Live Preview
+Preview Dashboard
 
 </a>
 
@@ -236,7 +231,7 @@ Live Preview
 
 <p class="text-gray-400 mt-2">
 
-Core Modules
+Integrated Worksheets
 
 </p>
 
@@ -268,7 +263,7 @@ Ready in
 
 <p class="text-gray-400 mt-2">
 
-10 Minutes
+Google Sheets
 
 </p>
 
@@ -380,177 +375,427 @@ Rp38.6M
 
 </section>
 
-<!-- TRUST -->
+<!-- WHAT'S INCLUDED -->
 
-<section class="py-10 border-y border-white/10">
+<section id="features" class="py-28">
 
-<div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-8">
 
-<div class="grid md:grid-cols-5 gap-8 text-center">
+        <!-- Heading -->
 
-<div>✔ Flash Cost Dashboard</div>
+        <div class="text-center max-w-3xl mx-auto">
 
-<div>✔ Food Cost Control</div>
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm font-semibold">
 
-<div>✔ Menu Engineering</div>
+                WHAT'S INCLUDED
 
-<div>✔ Executive Dashboard</div>
+            </span>
 
-<div>✔ Leakage Audit</div>
+            <h2 class="text-5xl font-black mt-8 leading-tight">
 
-</div>
+                Everything You Need
+                <br>
+                to Control Restaurant Profit
 
-</div>
+            </h2>
+
+            <p class="mt-6 text-xl text-gray-400 leading-8">
+
+                Five integrated worksheets designed to help restaurant owners
+                monitor costs, improve profitability, and make better business decisions.
+
+            </p>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
+
+            <!-- Card 1 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl">📊</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Executive Dashboard
+
+                </h3>
+
+                <p class="mt-4 text-gray-400 leading-7">
+
+                    Monitor revenue, expenses, food cost,
+                    and overall restaurant performance
+                    from one central dashboard.
+
+                </p>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl">🍽</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Food Cost Control
+
+                </h3>
+
+                <p class="mt-4 text-gray-400 leading-7">
+
+                    Calculate recipe costs accurately
+                    and keep your food cost under control.
+
+                </p>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl">📈</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Flash Cost Dashboard
+
+                </h3>
+
+                <p class="mt-4 text-gray-400 leading-7">
+
+                    Instantly monitor your daily business
+                    performance with automated calculations.
+
+                </p>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl">💰</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Expense Control
+
+                </h3>
+
+                <p class="mt-4 text-gray-400 leading-7">
+
+                    Record and analyze operational expenses
+                    to prevent unnecessary spending.
+
+                </p>
+
+            </div>
+
+            <!-- Card 5 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl">📋</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Menu Engineering
+
+                </h3>
+
+                <p class="mt-4 text-gray-400 leading-7">
+
+                    Identify your most profitable menu items
+                    and optimize your menu strategy.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- PROBLEM -->
+<!-- PROBLEMS -->
 
-<section class="py-28">
+<section class="py-32">
 
-<div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-8">
 
-<div class="text-center">
+        <!-- Heading -->
 
-<h2 class="text-5xl font-bold">
+        <div class="text-center max-w-3xl mx-auto">
 
-Apakah Restoran Anda Mengalami Masalah Ini?
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-sm font-semibold">
 
-</h2>
+                COMMON CHALLENGES
 
-<p class="text-gray-400 mt-6 text-xl">
+            </span>
 
-Sebagian besar owner baru mengetahui masalah ketika profit sudah turun.
+            <h2 class="text-5xl font-black mt-8 leading-tight">
 
-</p>
+                Running a Restaurant Is Hard.
+                <br>
+                Managing Profit Shouldn't Be.
 
-</div>
+            </h2>
 
-<div class="grid lg:grid-cols-4 gap-8 mt-20">
+            <p class="mt-6 text-xl text-gray-400 leading-8">
 
-<div class="glass rounded-3xl p-8">
+                Without clear numbers, small operational issues can quietly become major profit losses.
+                Kitchen Mates helps you identify them before they affect your business.
 
-<h3 class="text-2xl font-bold">
+            </p>
 
-Food Cost
+        </div>
 
-</h3>
+        <!-- Cards -->
 
-<p class="mt-4 text-gray-400">
+        <div class="grid lg:grid-cols-2 gap-8 mt-20">
 
-Food Cost terus naik tanpa penyebab yang jelas.
+            <!-- Card -->
 
-</p>
+            <div class="glass rounded-3xl p-8">
 
-</div>
+                <div class="text-5xl">📈</div>
 
-<div class="glass rounded-3xl p-8">
+                <h3 class="text-2xl font-bold mt-6">
 
-<h3 class="text-2xl font-bold">
+                    Rising Food Cost
 
-Profit
+                </h3>
 
-</h3>
+                <p class="text-gray-400 mt-4 leading-8">
 
-<p class="mt-4 text-gray-400">
+                    Recipe costs continue to increase,
+                    but you don't know which menu items
+                    are causing the problem.
 
-Tidak tahu berapa profit sebenarnya setiap bulan.
+                </p>
 
-</p>
+            </div>
 
-</div>
+            <div class="glass rounded-3xl p-8">
 
-<div class="glass rounded-3xl p-8">
+                <div class="text-5xl">💸</div>
 
-<h3 class="text-2xl font-bold">
+                <h3 class="text-2xl font-bold mt-6">
 
-Expense
+                    Unclear Profit
 
-</h3>
+                </h3>
 
-<p class="mt-4 text-gray-400">
+                <p class="text-gray-400 mt-4 leading-8">
 
-Biaya operasional membengkak tanpa kontrol.
+                    Sales look good,
+                    but you still don't know
+                    how much profit your restaurant actually makes.
 
-</p>
+                </p>
 
-</div>
+            </div>
 
-<div class="glass rounded-3xl p-8">
+            <div class="glass rounded-3xl p-8">
 
-<h3 class="text-2xl font-bold">
+                <div class="text-5xl">📦</div>
 
-Leakage
+                <h3 class="text-2xl font-bold mt-6">
 
-</h3>
+                    Uncontrolled Expenses
 
-<p class="mt-4 text-gray-400">
+                </h3>
 
-Sulit mendeteksi kebocoran operasional.
+                <p class="text-gray-400 mt-4 leading-8">
 
-</p>
+                    Operational expenses continue to grow
+                    without proper monitoring
+                    and budget control.
 
-</div>
+                </p>
 
-</div>
+            </div>
 
-</div>
+            <div class="glass rounded-3xl p-8">
+
+                <div class="text-5xl">⚠️</div>
+
+                <h3 class="text-2xl font-bold mt-6">
+
+                    Profit Leakage
+
+                </h3>
+
+                <p class="text-gray-400 mt-4 leading-8">
+
+                    Waste, pricing mistakes,
+                    and operational inefficiencies
+                    slowly reduce your net profit.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- SOLUTION -->
+<div class="mt-16 text-center">
 
-<section class="py-32 bg-slate-900">
+    <p class="text-lg text-gray-400">
 
-<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+        Kitchen Mates helps you monitor these critical areas through a practical, ready-to-use restaurant management toolkit.
 
-<div>
-
-<h2 class="text-5xl font-bold">
-
-Restaurant Profit
-
-Control System
-
-</h2>
-
-<p class="text-gray-300 mt-8 text-lg leading-9">
-
-Professional management system
-used to monitor every important
-restaurant KPI in one place.
-
-</p>
-
-<div class="space-y-5 mt-10">
-
-<div>✔ Flash Cost Dashboard</div>
-
-<div>✔ Daily Cost Control</div>
-
-<div>✔ Menu Engineering</div>
-
-<div>✔ Executive Dashboard</div>
-
-<div>✔ Cost Leakage Audit</div>
+    </p>
 
 </div>
+    
+<!-- HOW IT HELPS -->
 
-</div>
+<section class="py-32 bg-slate-900/60">
 
-<div>
+    <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
 
-<img
+        <!-- LEFT -->
 
-src="assets/dashboard2.jpg"
+        <div>
 
-class="rounded-3xl shadow-2xl"
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm font-semibold">
 
-alt="dashboard">
+                HOW IT HELPS
 
-</div>
+            </span>
 
-</div>
+            <h2 class="text-5xl font-black mt-8 leading-tight">
+
+                How Kitchen Mates Helps
+                <br>
+                You Stay in Control
+
+            </h2>
+
+            <p class="mt-8 text-xl text-gray-400 leading-9">
+
+                Designed to simplify daily restaurant management,
+                Kitchen Mates helps you monitor costs,
+                control expenses,
+                and make better business decisions
+                using one practical toolkit.
+
+            </p>
+
+            <div class="space-y-8 mt-12">
+
+                <div>
+
+                    <h3 class="font-bold text-xl">
+
+                        📊 Monitor Performance
+
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+
+                        Track your restaurant's key numbers
+                        from one executive dashboard.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold text-xl">
+
+                        🍽 Control Food Cost
+
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+
+                        Calculate recipe costs
+                        and monitor food cost accurately.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold text-xl">
+
+                        💰 Manage Expenses
+
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+
+                        Record operational expenses
+                        and identify unnecessary spending.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold text-xl">
+
+                        📈 Make Better Decisions
+
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+
+                        Replace manual calculations
+                        with clear business insights.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold text-xl">
+
+                        ☁ Google Sheets Ready
+
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+
+                        Accessible anywhere using
+                        your Google account.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div>
+
+            <img
+                src="assets/dashboard2.jpg"
+                class="rounded-3xl shadow-2xl border border-white/10"
+                alt="Kitchen Mates Dashboard">
+
+        </div>
+
+    </div>
 
 </section>
 
